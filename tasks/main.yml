@@ -1,0 +1,20 @@
+# tasks file for ubuntu-1604-grafana-server
+---
+- name: install signing key of repository
+  apt_key:
+    id: D59097AB
+    url: 'https://packagecloud.io/gpg.key'
+
+- name: add repository
+  apt_repository:
+    repo: 'deb https://packagecloud.io/grafana/testing/debian/ jessie main'
+
+- name: install grafana-server
+  apt:
+    name: grafana
+
+- name: start and enable service
+  service:
+    name: grafana_server
+    state: started
+    enabled: true

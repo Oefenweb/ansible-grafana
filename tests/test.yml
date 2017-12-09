@@ -1,0 +1,7 @@
+# test file for ubuntu-1604-grafana-server
+---
+- hosts: localhost
+  connection: local
+  become: true
+  roles:
+    - ../../
