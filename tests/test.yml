@@ -1,7 +1,9 @@
-# test file for ubuntu-1604-grafana-server
+# test file for grafana
 ---
 - hosts: localhost
   connection: local
   become: true
   roles:
     - ../../
+  post_tasks:
+    - include: post.yml

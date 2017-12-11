@@ -1,0 +1,7 @@
+# handlers file for grafana
+---
+- name: restart grafana-server
+  service:
+    name: grafana-server
+    state: restarted
+  when: service_default_state | default('started') == 'started'

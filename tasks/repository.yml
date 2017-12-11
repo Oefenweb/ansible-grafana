@@ -1,0 +1,29 @@
+# tasks file for grafana
+---
+- name: repository | dependencies
+  apt:
+    name: "{{ item }}"
+    state: "{{ apt_install_state | default('latest') }}"
+    update_cache: true
+    cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
+  with_items: "{{ grafana_dependencies_pre }}"
+  tags:
+    - grafana-repository-dependencies
+
+- name: repository | add public key
+  apt_key:
+    id: "{{ item.id }}"
+    url: "{{ item.url }}"
+    state: present
+  with_items: "{{ grafana_apt_keys }}"
+  tags:
+    - grafana-repository-public-key
+
+- name: repository | add
+  apt_repository:
+    repo: "{{ item.type }} {{ item.url }} {{ item.component }}"
+    state: present
+    update_cache: true
+  with_items: "{{ grafana_repositories }}"
+  tags:
+    - grafana-repository-add

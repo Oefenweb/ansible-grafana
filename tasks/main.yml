@@ -1,20 +1,27 @@
-# tasks file for ubuntu-1604-grafana-server
+# tasks file for grafana
 ---
-- name: install signing key of repository
-  apt_key:
-    id: D59097AB
-    url: 'https://packagecloud.io/gpg.key'
+- include: repository.yml
+  tags:
+    - configuration
+    - grafana
+    - grafana-repository
 
-- name: add repository
-  apt_repository:
-    repo: 'deb https://packagecloud.io/grafana/testing/debian/ jessie main'
+- include: install.yml
+  tags:
+    - configuration
+    - grafana
+    - grafana-install
 
-- name: install grafana-server
-  apt:
-    name: grafana
+- include: configure.yml
+  tags:
+    - configuration
+    - grafana
+    - grafana-configure
 
 - name: start and enable service
   service:
     name: grafana-server
-    state: started
-    enabled: true
+    state: "{{ service_default_state | default('started') }}"
+    enabled: "{{ service_default_enabled | default(true) | bool }}"
+  tags:
+    - grafana-start-enable-service
