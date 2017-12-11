@@ -1,0 +1,5 @@
+; {{ ansible_managed }}
+
+{% for directive in grafana_etc_grafana_grafana_ini %}
+{{ directive }}
+{% endfor %}

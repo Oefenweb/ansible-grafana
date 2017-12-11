@@ -1,0 +1,17 @@
+# vars file for grafana
+---
+grafana_dependencies_pre:
+  - apt-transport-https
+  - ca-certificates
+
+grafana_apt_keys:
+  - id: D59097AB
+    url: https://packagecloud.io/gpg.key
+
+grafana_repositories:
+  - type: deb
+    url: 'https://packagecloud.io/grafana/stable/debian/ jessie'
+    component: main
+
+grafana_dependencies:
+  - grafana

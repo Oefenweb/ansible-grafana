@@ -1,0 +1,52 @@
+# tasks file for grafana
+---
+- name: configure | stat directories
+  stat:
+    path: "{{ item }}/"
+  register: _stat_directories
+  with_items:
+    - "{{ grafana_grafana_home }}"
+    - "{{ grafana_log_dir }}"
+    - "{{ grafana_data_dir }}"
+    - "{{ grafana_conf_dir }}"
+    - "{{ grafana_plugins_dir }}"
+    - "{{ grafana_pid_file_dir }}"
+  tags:
+    - grafana-configure-directories
+    - grafana-configure-directories-stat
+
+- name: configure | create directories
+  file:
+    path: "{{ item.item }}"
+    state: directory
+    owner: "{{ grafana_grafana_user }}"
+    group: "{{ grafana_grafana_group }}"
+    mode: 0755
+  with_items: "{{ _stat_directories.results }}"
+  when: item.stat.exists == false
+  tags:
+    - grafana-configure-directories
+    - grafana-configure-directories-create
+
+- name: configure | update configuration files
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+    mode: "{{ item.mode }}"
+  notify: restart grafana-server
+  with_items:
+    - src: etc/grafana/grafana.ini.j2
+      dest: "{{ grafana_conf_file }}"
+      owner: root
+      group: "{{ grafana_grafana_group }}"
+      mode: '0640'
+    - src: etc/default/grafana-server.j2
+      dest: /etc/default/grafana-server
+      owner: root
+      group: root
+      mode: '0644'
+  tags:
+    - grafana-configure-configuration
+    - grafana-configure-configuration-files

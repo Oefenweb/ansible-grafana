@@ -1,0 +1,32 @@
+# defaults file for grafana
+---
+grafana_install: []
+
+grafana_grafana_user: grafana
+grafana_grafana_group: grafana
+grafana_grafana_home: /usr/share/grafana
+grafana_log_dir: /var/log/grafana
+grafana_data_dir: /var/lib/grafana
+grafana_max_open_files: 10000
+grafana_conf_dir: /etc/grafana
+grafana_conf_file: /etc/grafana/grafana.ini
+grafana_restart_on_upgrade: true
+grafana_plugins_dir: /var/lib/grafana/plugins
+grafana_pid_file_dir: /var/run/grafana
+
+grafana_etc_default:
+  - |
+    GRAFANA_USER={{ grafana_grafana_user }}
+    GRAFANA_GROUP={{ grafana_grafana_group }}
+    GRAFANA_HOME={{ grafana_grafana_home }}
+    LOG_DIR={{ grafana_log_dir }}
+    DATA_DIR={{ grafana_data_dir }}
+    MAX_OPEN_FILES={{ grafana_max_open_files }}
+    CONF_DIR={{ grafana_conf_dir }}
+    CONF_FILE={{ grafana_conf_file }}
+    RESTART_ON_UPGRADE={{ grafana_restart_on_upgrade | bool | to_json }}
+    PLUGINS_DIR={{ grafana_plugins_dir }}
+    # Only used on systemd systems
+    PID_FILE_DIR={{ grafana_pid_file_dir }}
+
+grafana_etc_grafana_grafana_ini: []
