@@ -14,7 +14,7 @@ galaxy_info:
     - name: Debian
       versions:
         - jessie
-        - strech
+        - stretch
   galaxy_tags:
     - system
     - monitoring
