@@ -21,7 +21,7 @@ boxes = [
   {
     :name => "debian-8",
     :box => "bento/debian-8",
-    :ip => '10.0.0.15',
+    :ip => '10.0.0.14',
     :cpu => "50",
     :ram => "256"
   },
