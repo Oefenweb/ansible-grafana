@@ -2,15 +2,17 @@
 ---
 - name: post | install dependencies
   apt:
-    name: "{{ item }}"
+    name:
+      - curl
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
-  with_items:
-    - curl
 
 - name: post | test installation
-  command: curl -sL --head http://127.0.0.1:3000
+  command: >
+    curl -sL --head http://127.0.0.1:3000
+  args:
+    warn: false
   register: _result
   changed_when: false
   failed_when: _result.stdout.find('200 OK') == -1

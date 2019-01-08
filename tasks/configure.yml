@@ -23,7 +23,7 @@
     group: "{{ grafana_grafana_group }}"
     mode: 0755
   with_items: "{{ _stat_directories.results }}"
-  when: item.stat.exists == false
+  when: not  item.stat.exists
   tags:
     - grafana-configure-directories
     - grafana-configure-directories-create

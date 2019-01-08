@@ -2,11 +2,10 @@
 ---
 - name: repository | dependencies
   apt:
-    name: "{{ item }}"
+    name: "{{ grafana_dependencies_pre }}"
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
-  with_items: "{{ grafana_dependencies_pre }}"
   tags:
     - grafana-repository-dependencies
 

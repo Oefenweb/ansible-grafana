@@ -5,12 +5,12 @@ grafana_dependencies_pre:
   - ca-certificates
 
 grafana_apt_keys:
-  - id: D59097AB
-    url: https://packagecloud.io/gpg.key
+  - id: 8C8C34C524098CB6
+    url: https://packages.grafana.com/gpg.key
 
 grafana_repositories:
-  - type: deb
-    url: 'https://packagecloud.io/grafana/stable/debian/ jessie'
+  - type: 'deb [arch=amd64]'
+    url: 'https://packages.grafana.com/oss/deb stable'
     component: main
 
 grafana_dependencies:
