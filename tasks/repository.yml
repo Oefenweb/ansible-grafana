@@ -23,6 +23,7 @@
     repo: "{{ item.type }} {{ item.url }} {{ item.component }}"
     state: present
     update_cache: true
+    mode: 0644
   with_items: "{{ grafana_repositories }}"
   tags:
     - grafana-repository-add

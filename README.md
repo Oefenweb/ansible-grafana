@@ -1,6 +1,7 @@
 ## grafana
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-grafana.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-grafana) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-grafana-blue.svg)](https://galaxy.ansible.com/Oefenweb/grafana)
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-grafana.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-grafana)
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-grafana-blue.svg)](https://galaxy.ansible.com/Oefenweb/grafana)
 
 Set up (the latest version of) Grafana in Debian-like systems.
 
