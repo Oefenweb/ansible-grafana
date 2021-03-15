@@ -1,4 +1,4 @@
-# handlers file for grafana
+# handlers file
 ---
 - name: restart grafana-server
   service:

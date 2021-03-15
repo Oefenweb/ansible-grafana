@@ -1,4 +1,4 @@
-# post test file for grafana
+# post test file
 ---
 - name: post | install dependencies
   apt:

@@ -1,4 +1,4 @@
-# vars file for grafana
+# vars file
 ---
 grafana_dependencies_pre:
   - apt-transport-https
