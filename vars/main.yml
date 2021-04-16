@@ -1,8 +1,9 @@
 # vars file
 ---
 grafana_dependencies_pre:
+  - software-properties-common
+  - dirmngr
   - apt-transport-https
-  - ca-certificates
 
 grafana_apt_keys:
   - id: 8C8C34C524098CB6

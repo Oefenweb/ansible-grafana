@@ -1,13 +1,15 @@
 ## grafana
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-grafana.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-grafana)
-[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-grafana-blue.svg)](https://galaxy.ansible.com/Oefenweb/grafana)
+[![CI](https://github.com/Oefenweb/ansible-grafana/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-influxdb/actions?query=workflow%3ACI)
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-influxdb-blue.svg)](https://galaxy.ansible.com/Oefenweb/influxdb)
 
 Set up (the latest version of) Grafana in Debian-like systems.
 
 #### Requirements
 
-None
+* `software-properties-common` (will be installed)
+* `dirmngr` (will be installed)
+* `apt-transport-https` (will be installed)
 
 #### Variables
 
