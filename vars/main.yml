@@ -7,7 +7,7 @@ grafana_dependencies_pre:
 
 grafana_apt_keys:
   - id: 8C8C34C524098CB6
-    url: https://packages.grafana.com/gpg.key
+    keyserver: keyserver.ubuntu.com
 
 grafana_repositories:
   - type: 'deb [arch=amd64]'
