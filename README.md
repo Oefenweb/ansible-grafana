@@ -1,7 +1,7 @@
 ## grafana
 
 [![CI](https://github.com/Oefenweb/ansible-grafana/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-influxdb/actions?query=workflow%3ACI)
-[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-influxdb-blue.svg)](https://galaxy.ansible.com/Oefenweb/influxdb)
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-grafana-blue.svg)](https://galaxy.ansible.com/Oefenweb/grafana)
 
 Set up (the latest version of) Grafana in Debian-like systems.
 
