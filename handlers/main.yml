@@ -1,7 +1,7 @@
 # handlers file
 ---
 - name: restart grafana-server
-  service:
+  ansible.builtin.service:
     name: grafana-server
     state: restarted
   when: service_default_state | default('started') == 'started'

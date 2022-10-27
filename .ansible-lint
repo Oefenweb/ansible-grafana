@@ -2,4 +2,3 @@
 warn_list:
   - role-name
   - name[casing]
-  - '405'
