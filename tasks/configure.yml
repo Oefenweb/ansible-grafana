@@ -1,7 +1,7 @@
 # tasks file
 ---
 - name: configure | stat directories
-  stat:
+  ansible.builtin.stat:
     path: "{{ item }}/"
   register: _stat_directories
   with_items:
@@ -16,7 +16,7 @@
     - grafana-configure-directories-stat
 
 - name: configure | create directories
-  file:
+  ansible.builtin.file:
     path: "{{ item.item }}"
     state: directory
     owner: "{{ grafana_grafana_user }}"
@@ -29,7 +29,7 @@
     - grafana-configure-directories-create
 
 - name: configure | update configuration files
-  template:
+  ansible.builtin.template:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
     owner: "{{ item.owner }}"

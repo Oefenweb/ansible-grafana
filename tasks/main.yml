@@ -1,25 +1,28 @@
 # tasks file
 ---
-- include: repository.yml
+- name: repository
+  ansible.builtin.import_tasks: repository.yml
   tags:
     - configuration
     - grafana
     - grafana-repository
 
-- include: install.yml
+- name: install
+  ansible.builtin.import_tasks: install.yml
   tags:
     - configuration
     - grafana
     - grafana-install
 
-- include: configure.yml
+- name: configure
+  ansible.builtin.import_tasks: configure.yml
   tags:
     - configuration
     - grafana
     - grafana-configure
 
 - name: start and enable service
-  service:
+  ansible.builtin.service:
     name: grafana-server
     state: "{{ service_default_state | default('started') }}"
     enabled: "{{ service_default_enabled | default(true) | bool }}"

@@ -1,7 +1,7 @@
 # post test file
 ---
 - name: install test dependencies
-  apt:
+  ansible.builtin.apt:
     name:
       - curl
     state: "{{ apt_install_state | default('latest') }}"
@@ -9,7 +9,7 @@
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
 
 - name: run test
-  command: >
+  ansible.builtin.command: >
     curl -sL --head http://127.0.0.1:3000
   args:
     warn: false
