@@ -8,11 +8,9 @@
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
 
-- name: run test
+- name: run test  # noqa command-instead-of-module
   ansible.builtin.command: >
     curl -sL --head http://127.0.0.1:3000
-  args:
-    warn: false
   register: _result
   changed_when: false
   failed_when: _result.stdout.find('200 OK') == -1
