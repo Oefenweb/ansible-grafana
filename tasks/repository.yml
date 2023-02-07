@@ -27,7 +27,7 @@
   tags:
     - grafana-repository-keyring-file-download
 
-- name: download (keyring) file  # noqa command-instead-of-module risky-shell-pipe
+- name: add (keyring) file  # noqa command-instead-of-module risky-shell-pipe
   ansible.builtin.shell: >
     apt-key add < {{ grafana_keyring_dst }}
   when:
