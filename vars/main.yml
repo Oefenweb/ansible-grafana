@@ -11,7 +11,7 @@ grafana_dependencies_pre:
   - software-properties-common
   - dirmngr
   - apt-transport-https
-  - wget
+  - curl
   - coreutils
 
 grafana_dependencies:

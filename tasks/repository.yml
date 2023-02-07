@@ -21,7 +21,7 @@
 
 - name: download (keyring) file  # noqa command-instead-of-module risky-shell-pipe
   ansible.builtin.shell: >
-    wget -O- {{ grafana_keyring_src }} | gpg --dearmor | tee {{ grafana_keyring_dst }}
+    curl -sL {{ grafana_keyring_src }} | gpg --dearmor | tee {{ grafana_keyring_dst }}
   args:
     creates: "{{ grafana_keyring_dst }}"
   tags:
