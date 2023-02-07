@@ -21,9 +21,18 @@
 
 - name: download (keyring) file  # noqa command-instead-of-module risky-shell-pipe
   ansible.builtin.shell: >
-    wget -O- {{ grafana_keyring_src }} | tee {{ grafana_keyring_dst }}
+    wget -O- {{ grafana_keyring_src }} | gpg --dearmor | tee {{ grafana_keyring_dst }}
   args:
     creates: "{{ grafana_keyring_dst }}"
+  tags:
+    - grafana-repository-keyring-file-download
+
+- name: download (keyring) file  # noqa command-instead-of-module risky-shell-pipe
+  ansible.builtin.shell: >
+    apt-key add < {{ grafana_keyring_dst }}
+  when:
+    - ansible_distribution == 'Ubuntu'
+    - ansible_distribution_major_version is version('16', '<=')
   tags:
     - grafana-repository-keyring-file-download
 
