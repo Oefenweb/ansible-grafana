@@ -10,7 +10,7 @@ grafana_apt_keys:
     keyserver: https://apt.grafana.com/gpg.key
 
 grafana_repositories:
-  - type: 'deb [arch=amd64]'
+  - type: deb
     url: 'https://apt.grafana.com stable'
     component: main
 
