@@ -16,7 +16,7 @@
     state: absent
   with_items: "{{ grafana_old_apt_keys }}"
   tags:
-    - grafana-repository-public-key
+    - grafana-repository-old-public-key
 
 - name: repository | add public key
   ansible.builtin.apt_key:
