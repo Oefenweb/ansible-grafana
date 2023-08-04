@@ -6,12 +6,12 @@ grafana_dependencies_pre:
   - apt-transport-https
 
 grafana_apt_keys:
-  - id: 8C8C34C524098CB6
-    keyserver: keyserver.ubuntu.com
+  - id:  0E22EB88E39E12277A7760AE9E439B102CF3C0C6
+    keyserver: https://apt.grafana.com/gpg.key
 
 grafana_repositories:
   - type: 'deb [arch=amd64]'
-    url: 'https://packages.grafana.com/oss/deb stable'
+    url: 'https://apt.grafana.com stable'
     component: main
 
 grafana_dependencies:
