@@ -5,9 +5,13 @@ grafana_dependencies_pre:
   - dirmngr
   - apt-transport-https
 
+grafana_old_apt_keys:
+  - id: 8C8C34C524098CB6
+    keyserver: keyserver.ubuntu.com
+
 grafana_apt_keys:
-  - id:  0E22EB88E39E12277A7760AE9E439B102CF3C0C6
-    keyserver: https://apt.grafana.com/gpg.key
+  - id: 225E6A9BBB15A37E95EB6312C66A51CCB44C27E0
+    keyserver: keyserver.ubuntu.com
 
 grafana_repositories:
   - type: deb
