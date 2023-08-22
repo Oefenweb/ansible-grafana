@@ -10,11 +10,11 @@ grafana_old_apt_keys:
     keyserver: keyserver.ubuntu.com
 
 grafana_apt_keys:
-  - id: 225E6A9BBB15A37E95EB6312C66A51CCB44C27E0
+  - id: 9E439B102CF3C0C6
     keyserver: keyserver.ubuntu.com
 
 grafana_repositories:
-  - type: deb
+  - type: 'deb [arch=amd64]'
     url: 'https://apt.grafana.com stable'
     component: main
 
