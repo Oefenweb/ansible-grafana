@@ -8,9 +8,11 @@ grafana_dependencies_pre:
 grafana_old_apt_keys:
   - id: 8C8C34C524098CB6
     keyserver: keyserver.ubuntu.com
+  - id: 9E439B102CF3C0C6
+    keyserver: keyserver.ubuntu.com
 
 grafana_apt_keys:
-  - id: 9E439B102CF3C0C6
+  - id: 963FA27710458545
     keyserver: keyserver.ubuntu.com
 
 grafana_repositories:
