@@ -43,7 +43,7 @@ None
 ---
 - hosts: all
   roles:
-    - grafana
+    - oefenweb.grafana
 ```
 
 ##### Custon configuration
@@ -52,7 +52,7 @@ None
 ---
 - hosts: all
   roles:
-    - grafana
+    - oefenweb.grafana
   vars:
     grafana_etc_grafana_grafana_ini:
       - |
