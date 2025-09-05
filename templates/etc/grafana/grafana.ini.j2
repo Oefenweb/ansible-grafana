@@ -1,4 +1,4 @@
-; {{ ansible_managed }}
+{{ ansible_managed | comment(decoration='; ') }}
 
 {% for directive in grafana_etc_grafana_grafana_ini %}
 {{ directive }}

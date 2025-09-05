@@ -1,4 +1,4 @@
-# {{ ansible_managed }}
+{{ ansible_managed | comment }}
 
 {% for directive in grafana_etc_default %}
 {{ directive }}

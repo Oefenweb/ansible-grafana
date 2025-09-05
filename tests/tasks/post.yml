@@ -1,6 +1,6 @@
 # post test file
 ---
-- name: install test dependencies
+- name: post | install test dependencies
   ansible.builtin.apt:
     name:
       - curl
@@ -8,7 +8,7 @@
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
 
-- name: run test  # noqa command-instead-of-module
+- name: post | run test  # noqa command-instead-of-module
   ansible.builtin.command: >
     curl -sL --head http://127.0.0.1:3000
   register: _result
