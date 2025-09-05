@@ -1,21 +1,21 @@
 # vars file
 ---
+grafana_keyring_src: https://apt.grafana.com/gpg.key
+grafana_keyring_dst: /usr/share/keyrings/grafana.gpg
+grafana_repositories:
+  - type: 'deb [signed-by={{ grafana_keyring_dst }} arch=amd64]'
+    url: 'https://apt.grafana.com stable'
+    component: main
+  - type: 'deb [arch=amd64]'
+    url: 'https://apt.grafana.com stable'
+    component: main
+    state: absent
+
 grafana_dependencies_pre:
   - software-properties-common
   - dirmngr
   - apt-transport-https
-
-grafana_old_apt_keys:
-  - id: 8C8C34C524098CB6
-  - id: 9E439B102CF3C0C6
-
-grafana_apt_keys:
-  - id: 963FA27710458545
-
-grafana_repositories:
-  - type: 'deb [arch=amd64]'
-    url: 'https://apt.grafana.com stable'
-    component: main
+  - wget
 
 grafana_dependencies:
   - grafana
