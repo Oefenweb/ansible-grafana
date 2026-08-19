@@ -23,7 +23,7 @@ Set up (the latest version of) Grafana in Debian-like systems.
 * `grafana_max_open_files`: [default: `10000`]: Maximum number of open files
 * `grafana_conf_dir`: [default: `/etc/grafana`]: Configuration directory
 * `grafana_conf_file`: [default: `/etc/grafana/grafana.ini`]: Configuration file
-* `grafana_restart_on_upgrade`: [default: `true`]: Whether or not to restart on upgrade
+* `grafana_restart_on_upgrade`: [default: `true`]: Whether to restart on upgrade
 * `grafana_plugins_dir`: [default: `/var/lib/grafana/plugins`]: Plugins directory
 * `grafana_pid_file_dir`: [default: `/var/run/grafana`]: PID file (`run`) directory
 
